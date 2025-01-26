@@ -1,19 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom/client"
+import ReactDOM from "react-dom/client";
+import { jsx } from "react/jsx-runtime";
 
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "I Love Naruto"),
-    React.createElement("h2", {}, "I also Love Light Yagami"),
-  ]),
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "I Love Naruto"),
-    React.createElement("h2", {}, "I also Love Light Yagami"),
-  ]),
-]);
+const jsxHeading = (
+  <h1 className="heading" tabIndex={5}>
+    Namaste React Using JSX
+  </h1>
+);
 
+console.log(jsxHeading);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(parent);
-
-console.log(parent);
+root.render(jsxHeading);
