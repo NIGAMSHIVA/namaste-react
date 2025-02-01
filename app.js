@@ -44,7 +44,9 @@ const stylecard = {
   backgroundColor: "#f0f0f0",
 };
 
-const RestaurantCard = ({resname,cuisines}) => {
+const RestaurantCard = (props) => {
+
+  const { resname, cuisines } = props;
 
 
   return (
