@@ -44,7 +44,9 @@ const stylecard = {
   backgroundColor: "#f0f0f0",
 };
 
-const RestaurantCard = () => {
+const RestaurantCard = ({resname,cuisines}) => {
+
+
   return (
     <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
       <img
@@ -52,8 +54,8 @@ const RestaurantCard = () => {
         className="res-logo"
         src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/cvo1djhbwrgfqd64k0tl"
       />
-      <h3>Meghana Foods</h3>
-      <h4>Biryani,North Indian,Asian</h4>
+      <h3>{resname}</h3>
+      <h4>{cuisines}</h4>
       <h4>4.4 stars</h4>
       <h4>38 minutes</h4>
     </div>
@@ -66,7 +68,10 @@ const Body = () => {
       <div className="search">Search</div>
 
       <div className="res-container">
-        <RestaurantCard />
+        <RestaurantCard resname="Meghna Foods" cuisines="Biryani,North-Indian,Asian"/>
+        <RestaurantCard resname="KFC" cuisines="Burger,Fast Food"/>
+     
+     
       </div>
     </div>
   );
