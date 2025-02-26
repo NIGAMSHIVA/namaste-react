@@ -1,23 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-/*
-Header
- -Logo
- -nav-items
-
-Body
- -Search
- -Restaurant-Container
-  -Restaurant Cart
-Footer
- -Copyright
- -links
- -address
- -Contacts
-
-
-*/
 
 const data = [
   {
@@ -570,7 +553,7 @@ const data = [
       sectionId: "MENU_RETURN_FOOD",
     },
   },
-];
+]
 
 const Header = () => {
   return (
@@ -600,6 +583,9 @@ const stylecard = {
 const RestaurantCard = (props) => {
   const { data } = props;
 
+  const { name, cuisines, avgRating, costForTwo, deliveryTime,address} =
+    data.card.info;
+
   return (
     <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
       <img
@@ -610,11 +596,12 @@ const RestaurantCard = (props) => {
           data.card.info.cloudinaryImageId
         }
       />
-      <h3>{data.card.info.name}</h3>
-      <h3>{data.card.info.cuisines.join(", ")}</h3>
-      <h4>{data.card.info.avgRating}</h4>
-      <h4>RS:{data.card.info.costForTwo}</h4>
-      <h4>{data.card.info.sla.deliveryTime}</h4>
+      <h3>{ address }</h3>
+      <h3>{name}</h3>
+      <h3>{cuisines.join(", ")}</h3>  
+      <h4>{avgRating}</h4>
+      <h4>RS:{costForTwo}</h4>
+      <h4>{data.card.info.sla.deliveryTime} minutes</h4>
     </div>
   );
 };
@@ -625,8 +612,17 @@ const Body = () => {
       <div className="search">Search</div>
 
       <div className="res-container">
-        <RestaurantCard data={data[0]} />
-        <RestaurantCard data={data[1]} />
+
+       
+
+        {data.map((t) => (
+        
+          <RestaurantCard data={t} />
+        
+        ))}
+
+        {/* <RestaurantCard data={data[1]} />
+        
         <RestaurantCard data={data[2]} />
         <RestaurantCard data={data[3]} />
         <RestaurantCard data={data[4]} />
@@ -634,8 +630,7 @@ const Body = () => {
         <RestaurantCard data={data[6]} />
         <RestaurantCard data={data[7]} />
         <RestaurantCard data={data[8]} />
-        <RestaurantCard data={data[9]} />
-
+        <RestaurantCard data={data[9]} /> */}
       </div>
     </div>
   );
