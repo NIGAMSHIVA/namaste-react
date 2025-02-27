@@ -6,7 +6,9 @@ import data from "../utils/mockData"
 const Body = () => {
     return (
       <div className="body">
-        <div className="search">Search</div>
+            <div className="filter">
+                <button className="btn" onClick={()=>{console.log("Button is pressed")}}>Top-Rated Restaurants</button>
+        </div>
   
         <div className="res-container">
           {data.map((t) => (
